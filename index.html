@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f6fa">
+<meta name="description" content="Asma Zerriaa — Digital marketing, web analytics, UX and digital innovation.">
+<title>Asma Zerriaa | Digital Marketing & Digital Innovation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#182d49;--blue:#426d9c;--blue2:#7396bd;--sky:#dce9f6;--ice:#eef3f9;
+ --lav:#e8e3f4;--lilac:#9a8bbb;--cream:#faf8f3;--white:#fff;--muted:#6e7d90;
+ --line:#dce4ee;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;
+ --shadow:0 18px 50px rgba(24,45,73,.10);--radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:var(--sans);background:var(--cream);color:var(--navy);line-height:1.65;overflow-x:hidden}
+a{color:inherit} img{max-width:100%}
+button{font:inherit}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+.serif{font-family:var(--serif)}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.13}
+h2{font-size:clamp(2.25rem,4.5vw,3.7rem);letter-spacing:-.035em}
+.section{padding:105px 0;position:relative}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}
+.section-heading p{max-width:390px;color:var(--muted);font-size:.93rem}
+.italic-blue{font-style:italic;color:var(--blue)}
+/* Navigation */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,248,243,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,228,238,.8)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:700 1.35rem var(--serif);text-decoration:none;letter-spacing:-.04em}
+.brand span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:27px}
+.nav-links a{font-size:.78rem;font-weight:600;text-decoration:none;color:var(--muted);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-contact,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 20px;font-size:.79rem;font-weight:700;text-decoration:none;transition:.25s ease}
+.nav-contact,.btn-primary{background:var(--navy);color:white}
+.nav-contact:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(24,45,73,.18)}
+.menu-toggle{display:none;border:0;background:none;color:var(--navy);font-size:1.6rem}
+/* Hero */
+.hero{min-height:680px;padding:78px 0 92px;position:relative;overflow:hidden;background:linear-gradient(115deg,#f8f7f2 0%,#f1f4f9 58%,#e9e8f3 100%)}
+.hero:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(66,109,156,.13);border-radius:50%;right:-205px;top:-260px;box-shadow:0 0 0 35px rgba(66,109,156,.035),0 0 0 75px rgba(66,109,156,.025)}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(189,180,219,.3),transparent 70%);left:-170px;bottom:-200px}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:65px;position:relative;z-index:2}
+.hero-copy{animation:fadeSlide .85s both}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border:1px solid #d8e2ed;border-radius:99px;background:rgba(255,255,255,.6);font-size:.72rem;color:var(--blue);font-weight:700;letter-spacing:.06em}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:#87a98f;box-shadow:0 0 0 5px rgba(135,169,143,.15)}
+.hero h1{font-size:clamp(4rem,7vw,6.7rem);letter-spacing:-.07em;line-height:.99;margin:25px 0 23px}
+.hero h1 span{display:block;color:var(--blue);font-style:italic;font-weight:500}
+.hero-lead{max-width:510px;color:#66778b;font-size:1.02rem;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-outline{border:1px solid #cbd8e6;color:var(--navy);background:rgba(255,255,255,.5)}
+.hero-footnote{display:flex;align-items:center;gap:10px;margin-top:34px;font-size:.76rem;color:var(--muted)}
+.hero-footnote svg{width:18px;height:18px;color:var(--blue)}
+.hero-visual{position:relative;width:min(100%,465px);margin:0 auto}
+.photo-shell{position:relative;width:100%;aspect-ratio:4/4.55;padding:13px;background:white;border-radius:28px;box-shadow:var(--shadow);transform:rotate(1.5deg);transition:transform .5s ease}
+.photo-shell:hover{transform:rotate(0deg) translateY(-5px)}
+.photo-shell:before{content:"";position:absolute;inset:-13px 25px 24px -17px;border:2px solid #8eadd0;border-radius:28px;z-index:-1;transform:rotate(-4deg)}
+.photo-shell img{width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:18px;display:block}
+.photo-caption{position:absolute;bottom:31px;left:-32px;background:white;border-radius:15px;padding:13px 17px;box-shadow:var(--shadow);font-size:.75rem;color:var(--muted);transform:rotate(-3deg);animation:float 5s ease-in-out infinite}
+.photo-caption strong{display:block;font:600 1.15rem var(--serif);color:var(--navy)}
+.hero-sticker{position:absolute;right:-32px;top:23px;width:92px;height:92px;display:grid;place-items:center;border-radius:50%;background:var(--lav);color:#6e638e;transform:rotate(12deg);animation:spinSlow 22s linear infinite}
+.hero-sticker svg{width:65px;height:65px}
+.hero-doodle{position:absolute;right:-48px;bottom:50px;width:95px;opacity:.8;animation:float 4.5s ease-in-out infinite}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#8493a5}
+/* About */
+.about{background:white}
+.about-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:80px;align-items:center}
+.about-art{position:relative;min-height:390px;display:grid;place-items:center;background:linear-gradient(145deg,#e8eff8,#f0edf7);border-radius:30px;overflow:hidden}
+.about-art:before,.about-art:after{content:"";position:absolute;border:1px solid rgba(66,109,156,.22);border-radius:50%;width:270px;height:270px}
+.about-art:after{width:340px;height:340px}
+.about-art svg{position:relative;z-index:1;width:80%;max-width:330px;animation:float 6s ease-in-out infinite}
+.about-copy h2{margin:13px 0 22px}
+.about-copy p{color:var(--muted);margin-bottom:15px;font-size:.94rem}
+.about-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.fact-pill{padding:11px 15px;background:var(--ice);border-radius:13px;color:var(--blue-dark,#24496f);font-size:.75rem;font-weight:700}
+.fact-pill b{font-family:var(--serif);font-size:1.08rem;margin-right:5px}
+/* Experience */
+.experience-section{background:var(--cream)}
+.experience-list{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.exp-card{background:white;border:1px solid var(--line);border-radius:21px;overflow:hidden;position:relative;transition:transform .3s,box-shadow .3s,border-color .3s}
+.exp-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#bdcfe1}
+.exp-card:before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--blue),#b5a8d4);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.exp-card:hover:before{transform:scaleX(1)}
+.exp-main{display:flex;align-items:flex-start;gap:17px;padding:24px 23px 17px}
+.logo-box{flex:0 0 72px;height:65px;border:1px solid #edf0f4;border-radius:13px;background:#fff;display:grid;place-items:center;padding:8px;overflow:hidden}
+.logo-box img{max-width:100%;max-height:100%;object-fit:contain}
+.logo-fallback{display:none;font-size:.75rem;font-weight:800;color:var(--blue);text-align:center}
+.exp-heading{flex:1;min-width:0}
+.exp-date{font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:#8492a2;font-weight:700}
+.exp-heading h3{font-size:1.19rem;margin:5px 0 3px}
+.exp-company{font-size:.82rem;font-weight:700;color:var(--blue)}
+.exp-summary{padding:0 23px 17px;color:var(--muted);font-size:.83rem}
+.exp-bottom{padding:0 23px 22px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-tag{background:#eef3f8;color:#58799d;border-radius:99px;padding:5px 9px;font-size:.64rem;font-weight:700}
+.exp-more{border:0;background:transparent;color:var(--blue);font-size:.73rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.exp-extra{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.exp-extra>div{overflow:hidden}
+.exp-card.open .exp-extra{grid-template-rows:1fr}
+.exp-extra-content{margin:0 23px;padding:0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.exp-card.open .exp-extra-content{padding:15px 0 20px}
+.exp-extra-content strong{color:var(--navy)}
+.confidential{margin-top:22px;padding:15px 19px;border-left:3px solid #a9bdd5;background:#edf2f8;color:var(--muted);font-size:.79rem}
+/* Skills */
+.skills-section{background:#e9eff7;overflow:hidden}
+.skills-section:after{content:"";position:absolute;right:-140px;bottom:-190px;width:400px;height:400px;border:1px solid rgba(66,109,156,.14);border-radius:50%;box-shadow:0 0 0 35px rgba(66,109,156,.025),0 0 0 70px rgba(66,109,156,.02)}
+.skill-layout{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;position:relative;z-index:1}
+.skill-card{padding:25px 21px 24px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.95);border-radius:20px;transition:transform .3s,box-shadow .3s}
+.skill-card:hover{transform:translateY(-8px) rotate(-.5deg);box-shadow:var(--shadow)}
+.skill-icon{width:48px;height:48px;border-radius:15px;background:#e3ebf5;display:grid;place-items:center;margin-bottom:20px;color:var(--blue)}
+.skill-icon svg{width:27px;height:27px}
+.skill-card:nth-child(2) .skill-icon{background:#eee9f7;color:#8877ad}
+.skill-card:nth-child(3) .skill-icon{background:#f5eee4;color:#a17e53}
+.skill-card:nth-child(4) .skill-icon{background:#e7f0eb;color:#638d76}
+.skill-card h3{font-size:1.17rem;margin-bottom:13px}
+.skill-card p{color:var(--muted);font-size:.79rem;line-height:1.9}
+.skill-card p span{display:inline-block;margin-right:5px}
+/* Projects */
+.projects-section{background:white}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.project-card{min-height:335px;border-radius:25px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s,box-shadow .35s}
+.project-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.project-card.culture{background:#233f62;color:white}
+.project-card.analytics{background:#eeeaf6;color:var(--navy)}
+.project-card.automation{background:#e7eff5;color:var(--navy)}
+.project-card.personal{background:#f5eee5;color:var(--navy)}
+.project-art{position:absolute;right:0;top:10px;width:48%;height:190px;opacity:.95;transition:transform .6s}
+.project-card:hover .project-art{transform:translate(-7px,-7px) rotate(3deg) scale(1.04)}
+.project-type{font-size:.67rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;opacity:.7;position:relative;z-index:1}
+.project-copy{position:relative;z-index:1;max-width:73%}
+.project-copy h3{font-size:1.8rem;margin:13px 0 9px}
+.project-copy p{font-size:.82rem;opacity:.78}
+.project-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.77rem;font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+.project-card.analytics .project-copy,.project-card.personal .project-copy{max-width:78%}
+/* Education */
+.education-section{background:var(--cream)}
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px}
+.education-column{position:relative}
+.edu-item{position:relative;padding:0 0 26px 25px;margin:23px 0;border-left:1px solid #cbd8e6}
+.edu-item:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--blue);left:-5.5px;top:5px;box-shadow:0 0 0 5px #e5edf6}
+.edu-date{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;color:var(--blue);font-weight:700}
+.edu-item h3{font-size:1.28rem;margin:7px 0}
+.edu-item p{font-size:.83rem;color:var(--muted)}
+.edu-highlight{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:99px;background:var(--lav);color:#71628f;font-size:.68rem;font-weight:700}
+/* Contact */
+.contact-section{background:var(--navy);color:white;text-align:center;padding:95px 0;position:relative;overflow:hidden}
+.contact-section:before,.contact-section:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;width:330px;height:330px;top:-180px;left:-110px}
+.contact-section:after{width:440px;height:440px;top:auto;left:auto;right:-180px;bottom:-270px}
+.contact-inner{position:relative;z-index:1}
+.contact-section .eyebrow{color:#b9cce0}
+.contact-section h2{font-size:clamp(2.6rem,5vw,4.5rem);max-width:760px;margin:15px auto}
+.contact-section p{max-width:510px;margin:0 auto 27px;color:rgba(255,255,255,.72);font-size:.9rem}
+.contact-section .btn{background:white;color:var(--navy)}
+.contact-links{display:flex;justify-content:center;gap:25px;margin-top:25px;flex-wrap:wrap}
+.contact-links a{font-size:.77rem;color:#d6e1ec;text-decoration:none}
+footer{padding:22px 0;color:var(--muted);font-size:.72rem}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+/* Reveal and motion */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.stagger>*{transition-delay:var(--delay,0ms)}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes spinSlow{to{transform:rotate(372deg)}}
+@keyframes dash{to{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+@media(max-width:950px){.hero-grid{gap:35px}.skill-layout{grid-template-columns:1fr 1fr}.experience-list{grid-template-columns:1fr 1fr}.about-grid{gap:40px}}
+@media(max-width:760px){
+ .section{padding:78px 0}.hero{padding:62px 0 80px}.hero-grid{grid-template-columns:1fr;gap:48px}.hero-copy{text-align:center}.hero-lead{margin-left:auto;margin-right:auto}.hero-actions,.hero-footnote{justify-content:center}.hero-visual{width:min(82%,410px)}.hero-sticker{right:-20px;width:75px;height:75px}
+ .section-heading{display:block}.section-heading p{margin-top:15px}.about-grid{grid-template-columns:1fr;gap:30px}.about-art{min-height:280px}
+ .experience-list{grid-template-columns:1fr}.project-grid,.education-grid{grid-template-columns:1fr;gap:18px}
+ .nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:var(--cream);padding:22px 24px 26px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}
+ .nav-links.open{display:flex}.menu-toggle{display:block}.nav-contact{display:none}
+}
+@media(max-width:500px){.container{width:calc(100% - 34px)}.hero h1{font-size:3.8rem}.hero-visual{width:83%}.photo-caption{left:-20px}.skill-layout{grid-template-columns:1fr}.project-card{min-height:300px;padding:25px}.project-copy{max-width:82%}.project-art{width:55%;opacity:.7}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+ <nav class="nav container" aria-label="Main navigation">
+  <a class="brand" href="#home">Asma<span>.</span></a>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <div class="nav-links">
+   <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a>
+  </div>
+  <a class="nav-contact" href="#contact">Let's connect ↗</a>
+ </nav>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <div class="hero-kicker"><i></i> DIGITAL MARKETING · ANALYTICS · UX</div>
+   <h1>Asma<br><span>Zerriaa.</span></h1>
+   <p class="hero-lead">A curious digital marketer exploring the space where creativity, data and technology meet. I like understanding how digital experiences work — and how to make them work better.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#experience">Explore my journey <span>↘</span></a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/zerriaa-asma/" target="_blank" rel="noopener">LinkedIn ↗</a>
+   </div>
+   <div class="hero-footnote">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+    M2 Digital Marketing student · ESSECT Tunis
+   </div>
+  </div>
+  <div class="hero-visual">
+   <div class="photo-shell"><img src="imgdmk.jpeg" alt="Portrait of Asma Zerriaa"></div>
+   <div class="photo-caption"><strong>Curious mind.</strong>Digital perspective.</div>
+   <div class="hero-sticker" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none"><defs><path id="circleText" d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"/></defs><text font-family="DM Sans" font-size="9" letter-spacing="2.1" fill="#6e638e"><textPath href="#circleText">CREATE · LEARN · EXPLORE · </textPath></text><path d="M50 35v30M35 50h30" stroke="#6e638e" stroke-width="2" stroke-linecap="round"/></svg>
+   </div>
+   <svg class="hero-doodle" viewBox="0 0 110 100" fill="none" aria-hidden="true"><path d="M8 72C28 15 65 5 96 27C113 39 98 68 77 59C59 51 67 31 82 34" stroke="#8d83b0" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="5 7"/><path d="m75 23 11 11-14 3" stroke="#8d83b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+ </div>
+ <div class="scroll-hint">Scroll to discover ↓</div>
+</section>
+
+<section class="section about" id="about">
+ <div class="container about-grid">
+  <div class="about-art reveal" aria-label="Illustration of creative digital work">
+   <svg viewBox="0 0 360 330" fill="none" role="img" aria-hidden="true">
+    <rect x="55" y="46" width="245" height="190" rx="18" fill="#fff" stroke="#9eb6d1" stroke-width="2"/>
+    <rect x="72" y="65" width="211" height="14" rx="7" fill="#e6edf6"/>
+    <circle cx="84" cy="72" r="3" fill="#9a8bbb"/><circle cx="96" cy="72" r="3" fill="#9a8bbb"/><circle cx="108" cy="72" r="3" fill="#9a8bbb"/>
+    <rect x="76" y="96" width="88" height="117" rx="10" fill="#edf2f8"/>
+    <rect x="89" y="110" width="62" height="7" rx="3.5" fill="#b6c9df"/><rect x="89" y="126" width="48" height="5" rx="2.5" fill="#d0dce9"/>
+    <rect x="89" y="140" width="57" height="5" rx="2.5" fill="#d0dce9"/><rect x="89" y="154" width="42" height="5" rx="2.5" fill="#d0dce9"/>
+    <rect x="89" y="177" width="47" height="22" rx="6" fill="#527aa5"/>
+    <rect x="176" y="96" width="108" height="117" rx="10" fill="#f4f0f8"/>
+    <path d="M190 184l22-24 17 12 26-39 18 18" stroke="#8d80ae" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M190 194h80" stroke="#d5cde5" stroke-width="2"/>
+    <circle cx="255" cy="117" r="7" fill="#b9add4"/>
+    <rect x="132" y="245" width="92" height="11" rx="5.5" fill="#9eb6d1"/>
+    <path d="M178 236v9" stroke="#9eb6d1" stroke-width="5"/>
+    <circle cx="47" cy="58" r="17" fill="#dcd5ed"/><path d="M47 48v20M37 58h20" stroke="#8877ad" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M292 244l7 15 16 2-12 10 3 16-14-8-14 8 3-16-12-10 16-2 7-15z" fill="#b7cbe0"/>
+    <path d="M55 270c15-13 28-13 42 0" stroke="#9a8bbb" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 6"/>
+   </svg>
+  </div>
+  <div class="about-copy reveal">
+   <div class="eyebrow">A little about me</div>
+   <h2>Creative roots.<br><span class="italic-blue">Analytical curiosity.</span></h2>
+   <p>I'm currently pursuing an M2 in Digital Marketing at ESSECT, after earning a degree in Multimedia Communication from ISAMM. My background gave me a mix of creative, technical and communication skills that I now bring into digital marketing.</p>
+   <p>Across internships and projects, I've explored content, UX/UI, web development, client acquisition, SEO and website analysis. I'm especially interested in data tracking, digital performance, AI and automation — and in finding practical ways to connect them.</p>
+   <div class="about-facts">
+    <span class="fact-pill"><b>7</b> internship experiences</span>
+    <span class="fact-pill"><b>2nd</b> in Licence cohort</span>
+    <span class="fact-pill"><b>1st</b> in M1 cohort</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section experience-section" id="experience">
+ <div class="container">
+  <div class="section-heading reveal"><div><div class="eyebrow">Learning through experience</div><h2>Where I've <span class="italic-blue">made an impact.</span></h2></div><p>Every experience added a new perspective — from digital communication and business development to user experience and website optimisation.</p></div>
+  <div class="experience-list">
+   <article class="exp-card reveal">
+    <div class="exp-main"><div class="logo-box"><img src="TB.svg" alt="Tunisie Booking logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-fallback">TB</span></div><div class="exp-heading"><div class="exp-date">July 2026</div><h3>Digital Marketing Intern</h3><div class="exp-company">Tunisie Booking</div></div></div>
+    <p class="exp-summary">Explored digital acquisition, website content and user behaviour in the online travel-booking sector.</p>
+    <div class="exp-bottom"><div class="exp-tags"><span class="exp-tag">Clarity</span><span class="exp-tag">UX / CRO</span><span class="exp-tag">SEO / SEA</span></div><button class="exp-more" aria-expanded="false">More details +</button></div>
+    <div class="exp-extra"><div><div class="exp-extra-content">Reviewed the booking journey with <strong>Microsoft Clarity</strong>, observing navigation, interactions and potential friction points. Also gained exposure to social media, content, SEO/SEA and media buying activities.</div></div></div>
+   </article>
+   <article class="exp-card reveal">
+    <div class="exp-main"><div class="logo-box"><img src="logo_noir_sur_blanc.jpg" alt="3allemni logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-fallback">3allemni</span></div><div class="exp-heading"><div class="exp-date">Apr – Jun 2026</div><h3>Community Manager · Part-time</h3><div class="exp-company">3allemni</div></div></div>
+    <p class="exp-summary">Contributed to social media communication and content creation for an online education platform.</p>
+    <div class="exp-bottom"><div class="exp-tags"><span class="exp-tag">Content</span><span class="exp-tag">Social media</span><span class="exp-tag">AI tools</span></div><button class="exp-more" aria-expanded="false">More details +</button></div>
+    <div class="exp-extra"><div><div class="exp-extra-content">Worked on visual and editorial content, community engagement and the use of generative AI tools to support content production.</div></div></div>
+   </article>
+   <article class="exp-card reveal">
+    <div class="exp-main"><div class="logo-box"><img src="desertsdigital_logo.jpeg" alt="Deserts Digital logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-fallback">DD</span></div><div class="exp-heading"><div class="exp-date">Oct 2025 – Jan 2026</div><h3>Client Acquisition Intern</h3><div class="exp-company">Deserts Digital OÜ</div></div></div>
+    <p class="exp-summary">Supported business development and digital accessibility initiatives across MENA markets.</p>
+    <div class="exp-bottom"><div class="exp-tags"><span class="exp-tag">B2B prospecting</span><span class="exp-tag">MENA</span><span class="exp-tag">Accessibility</span></div><button class="exp-more" aria-expanded="false">More details +</button></div>
+    <div class="exp-extra"><div><div class="exp-extra-content">Researched potential clients in the UAE and Saudi Arabia, prepared personalised outreach and explored website and digital-content accessibility needs.</div></div></div>
+   </article>
+   <article class="exp-card reveal">
+    <div class="exp-main"><div class="logo-box"><img src="logo_asqii-1.png" alt="ASQII logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-fallback">ASQII</span></div><div class="exp-heading"><div class="exp-date">Feb – May 2025</div><h3>UX/UI & Web Development Intern</h3><div class="exp-company">ASQII HealthTech</div></div></div>
+    <p class="exp-summary">Contributed to the redesign of a healthcare web application, combining UX research, UI design and development.</p>
+    <div class="exp-bottom"><div class="exp-tags"><span class="exp-tag">UX research</span><span class="exp-tag">Figma</span><span class="exp-tag">React</span><span class="exp-tag">PHP</span></div><button class="exp-more" aria-expanded="false">More details +</button></div>
+    <div class="exp-extra"><div><div class="exp-extra-content">Worked on a chemotherapy-management application for healthcare professionals, including research and interface improvements. Internal screens and product details are not displayed for confidentiality.</div></div></div>
+   </article>
+   <article class="exp-card reveal">
+    <div class="exp-main"><div class="logo-box"><img src="HTDS-LOGO-2026-1.png" alt="HTDS logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-fallback">HTDS</span></div><div class="exp-heading"><div class="exp-date">Jun – Aug 2024</div><h3>Digital Marketing & Event Management Intern</h3><div class="exp-company">HTDS Tunisia</div></div></div>
+    <p class="exp-summary">Supported website content, SEO and email marketing, alongside communication and event activities.</p>
+    <div class="exp-bottom"><div class="exp-tags"><span class="exp-tag">WordPress</span><span class="exp-tag">SEO</span><span class="exp-tag">Email</span><span class="exp-tag">Events</span></div><button class="exp-more" aria-expanded="false">More details +</button></div>
+    <div class="exp-extra"><div><div class="exp-extra-content">Created and managed digital content including visuals, videos and articles, and contributed to the organisation of professional events.</div></div></div>
+   </article>
+  </div>
+  <p class="confidential reveal">Some work samples cannot be shared publicly because of confidentiality. Instead, I describe the context, my contribution, the tools used and the skills developed — without exposing private company information.</p>
+ </div>
+</section>
+
+<section class="section skills-section" id="skills">
+ <div class="container">
+  <div class="section-heading reveal"><div><div class="eyebrow">My digital toolkit</div><h2>A mix of <span class="italic-blue">skills & tools.</span></h2></div><p>My skill set sits at the intersection of marketing, analytics, design and technology. Some areas are still in progress as I continue learning.</p></div>
+  <div class="skill-layout">
+   <article class="skill-card reveal"><div class="skill-icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 22V6m0 16h20M8 18l4-5 4 2 7-9"/><path d="M18 6h5v5"/></svg></div><h3>Marketing & Growth</h3><p>SEO · SEA fundamentals<br>Meta Ads exposure<br>Email marketing<br>Content strategy<br>Social media</p></article>
+   <article class="skill-card reveal"><div class="skill-icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="20" height="20" rx="4"/><path d="M8 18l4-5 3 2 5-7M8 9h.01"/></svg></div><h3>Analytics & Optimisation</h3><p>Google Analytics 4<br>Google Tag Manager<br>Microsoft Clarity<br>UX / CRO analysis<br>Excel · Power BI (learning)</p></article>
+   <article class="skill-card reveal"><div class="skill-icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 21l5-14 4 8 4-5 5 11H5z"/><circle cx="19" cy="7" r="2"/></svg></div><h3>Design & Experience</h3><p>Figma · Canva<br>Adobe Creative Cloud<br>UX research<br>Wireframing<br>UI design</p></article>
+   <article class="skill-card reveal"><div class="skill-icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 8L4 14l6 6M18 8l6 6-6 6M16 5l-4 18"/></svg></div><h3>Web & Emerging Tech</h3><p>WordPress<br>HTML · CSS · JavaScript<br>React · PHP<br>Generative AI<br>n8n automation</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section projects-section" id="projects">
+ <div class="container">
+  <div class="section-heading reveal"><div><div class="eyebrow">Selected work & experiments</div><h2>Things I've <span class="italic-blue">made & explored.</span></h2></div><p>Not every project needs a public client screenshot. Personal experiments and anonymised case studies can show how I think and work.</p></div>
+  <div class="project-grid">
+   <article class="project-card culture reveal">
+    <div class="project-type">Branding · Cultural communication</div>
+    <svg class="project-art" viewBox="0 0 220 190" fill="none" aria-hidden="true"><circle cx="124" cy="86" r="64" stroke="#c8d9e9" stroke-width="1.5" opacity=".7"/><circle cx="124" cy="86" r="48" stroke="#c8d9e9" stroke-dasharray="4 6" opacity=".7"/><path d="M124 30l14 42 42 14-42 14-14 42-14-42-42-14 42-14 14-42z" fill="#9eb9d5" opacity=".7"/><circle cx="124" cy="86" r="13" fill="#e8e3f4"/><path d="M24 147c24-31 45-31 67 0" stroke="#d5c8e8" stroke-width="3" stroke-linecap="round"/></svg>
+    <div class="project-copy"><h3>Zrayeb Lens</h3><p>A cultural festival concept celebrating Djerba's heritage. I developed the visual and digital communication direction.</p><a class="project-link" href="https://www.behance.net/gallery/228544853/Zrayeb-lens" target="_blank" rel="noopener">View on Behance ↗</a></div>
+   </article>
+   <article class="project-card analytics reveal">
+    <div class="project-type">UX research · Conversion analysis</div>
+    <svg class="project-art" viewBox="0 0 220 190" fill="none" aria-hidden="true"><rect x="34" y="24" width="150" height="126" rx="12" fill="white" stroke="#b8a9d1" stroke-width="1.5"/><path d="M49 48h120" stroke="#ded8e9" stroke-width="6" stroke-linecap="round"/><path d="M52 120l28-27 25 13 35-42 25 17" stroke="#8d7caf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M51 132h119" stroke="#e2ddec" stroke-width="2"/><circle cx="140" cy="64" r="6" fill="#b8a9d1"/><circle cx="80" cy="93" r="5" fill="#d8cfea"/></svg>
+    <div class="project-copy"><h3>Booking journey audit</h3><p>An anonymised look at a booking flow: user behaviour, interaction patterns and opportunities to reduce friction.</p><span class="project-link">Case study · Confidential details omitted</span></div>
+   </article>
+   <article class="project-card automation reveal">
+    <div class="project-type">UX/UI · HealthTech</div>
+    <svg class="project-art" viewBox="0 0 220 190" fill="none" aria-hidden="true"><rect x="35" y="22" width="150" height="142" rx="13" fill="white" stroke="#9db8d2" stroke-width="2"/><rect x="49" y="37" width="122" height="18" rx="5" fill="#e8eff7"/><circle cx="60" cy="46" r="4" fill="#7898bb"/><rect x="50" y="67" width="48" height="79" rx="7" fill="#edf3f8"/><circle cx="74" cy="88" r="12" fill="#d4e2f0"/><path d="M67 88h14M74 81v14" stroke="#527aa5" stroke-width="2.5" stroke-linecap="round"/><rect x="108" y="69" width="58" height="7" rx="3.5" fill="#b7cbe0"/><rect x="108" y="84" width="47" height="5" rx="2.5" fill="#d5e0eb"/><rect x="108" y="96" width="55" height="5" rx="2.5" fill="#d5e0eb"/><rect x="108" y="116" width="58" height="23" rx="6" fill="#dce8f4"/><path d="M118 127h8l5-6 6 11 5-5h14" stroke="#6689b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M178 18v18M169 27h18" stroke="#8c7eae" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <div class="project-copy"><h3>Healthcare app experience</h3><p>UX/UI work on a chemotherapy-management application for doctors and pharmacists, including user research, interviews and interface improvements.</p><span class="project-link">ASQII HealthTech · Confidential project</span></div>
+   </article>
+   <article class="project-card personal reveal">
+    <div class="project-type">Personal branding · SEO</div>
+    <svg class="project-art" viewBox="0 0 220 190" fill="none" aria-hidden="true"><rect x="40" y="22" width="135" height="145" rx="13" fill="white" stroke="#c6b9a5" stroke-width="1.5"/><rect x="55" y="40" width="105" height="8" rx="4" fill="#e5d9c9"/><rect x="55" y="59" width="65" height="5" rx="2.5" fill="#e5d9c9"/><rect x="55" y="79" width="105" height="55" rx="7" fill="#e8eff7"/><path d="M68 119l22-23 17 13 20-19 22 20" stroke="#6586aa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="148" cy="31" r="16" fill="#e8e3f4"/><path d="M148 22v18M139 31h18" stroke="#8877ad" stroke-width="2"/></svg>
+    <div class="project-copy"><h3>My SEO playground</h3><p>This website is also a practical project: building a personal brand, structuring content and applying on-page SEO principles.</p><span class="project-link">You're exploring it now ✦</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section education-section" id="education">
+ <div class="container">
+  <div class="section-heading reveal"><div><div class="eyebrow">My foundations</div><h2>Education & <span class="italic-blue">leadership.</span></h2></div><p>My academic background combines communication, digital skills and hands-on involvement in student and community initiatives.</p></div>
+  <div class="education-grid">
+   <div class="education-column reveal"><div class="eyebrow">Education</div>
+    <div class="edu-item"><div class="edu-date">2025 – 2027 · Current</div><h3>Master 2 · Digital Marketing</h3><p>ESSECT — Higher School of Economic and Commercial Sciences of Tunis.</p><span class="edu-highlight">M1 · Mention Très Bien · Major de promotion</span></div>
+    <div class="edu-item"><div class="edu-date">2022 – 2025</div><h3>Licence · Multimedia Communication</h3><p>ISAMM — Higher Institute of Multimedia Arts of Manouba.</p><span class="edu-highlight">16.03/20 · Mention Très Bien · 2nd in cohort</span></div>
+   </div>
+   <div class="education-column reveal"><div class="eyebrow">Extracurricular</div>
+    <div class="edu-item"><div class="edu-date">2022 – 2024</div><h3>Rotaract Carthago Notre Dame</h3><p>Head of Mission — Foundation; Head of Communication Committee and Vice President.</p></div>
+    <div class="edu-item"><div class="edu-date">2022 – 2024</div><h3>CIN ISAMM</h3><p>Vice President — Training & Development. Supported training initiatives and member development.</p></div>
+    <div class="edu-item"><div class="edu-date">Languages</div><h3>Arabic · French · English</h3><p>Arabic — Native · French — Fluent · English — Fluent</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact-section" id="contact">
+ <div class="container contact-inner reveal">
+  <div class="eyebrow">Have an opportunity or an idea?</div>
+  <h2>Let's create something <span class="italic-blue" style="color:#b9cce0">meaningful.</span></h2>
+  <p>I'm always happy to connect, exchange ideas and explore opportunities in digital marketing, analytics and digital transformation.</p>
+  <a class="btn" href="mailto:zerriaaasma@gmail.com">Say hello ↗</a>
+  <div class="contact-links"><a href="https://www.linkedin.com/in/zerriaa-asma/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="mailto:zerriaaasma@gmail.com">Email ↗</a><a href="https://www.behance.net/gallery/228544853/Zrayeb-lens" target="_blank" rel="noopener">Behance ↗</a></div>
+ </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>© 2026 Asma Zerriaa</span><span>Made with curiosity & intention.</span><a href="#home" style="text-decoration:none">Back to top ↑</a></div></footer>
+<script>
+ // Reveal elements on scroll, with a small stagger for visual rhythm.
+ const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting) {
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+   }
+  });
+ }, {threshold: 0.12});
+ document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.setProperty('--delay', `${(i % 4) * 85}ms`);
+  revealObserver.observe(el);
+ });
+
+ // Expandable experience cards.
+ document.querySelectorAll('.exp-more').forEach(button => {
+  button.addEventListener('click', () => {
+   const card = button.closest('.exp-card');
+   const open = card.classList.toggle('open');
+   button.setAttribute('aria-expanded', String(open));
+   button.textContent = open ? 'Less details −' : 'More details +';
+  });
+ });
+
+ // Mobile navigation.
+ const menuButton = document.querySelector('.menu-toggle');
+ const navLinks = document.querySelector('.nav-links');
+ menuButton.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.textContent = open ? '×' : '☰';
+ });
+ navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.textContent = '☰';
+ }));
+
+ // Highlight the navigation link for the section in view.
+ const navItems = document.querySelectorAll('.nav-links a');
+ const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting) {
+    navItems.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+   }
+  });
+ }, {rootMargin:'-35% 0px -55% 0px'});
+ document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+</script>
+</body>
+</html>
